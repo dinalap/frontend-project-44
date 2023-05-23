@@ -30,7 +30,7 @@ const startCalc = () => {
       const firstRandomInt = getRandomInt(1, 10);
       const secondRandomInt = getRandomInt(1, 10);
       const randomOperation = getRandomOperation();
-      questions.push(`${firstRandomInt}${randomOperation}${secondRandomInt}`);
+      questions.push(`${firstRandomInt} ${randomOperation} ${secondRandomInt}`);
 
       const correctAnswer = calculate(randomOperation, firstRandomInt, secondRandomInt);
       correctAnswers.push(String(correctAnswer));
