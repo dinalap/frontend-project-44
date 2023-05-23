@@ -3,7 +3,6 @@
   "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/dinalap/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/dinalap/frontend-project-44/actions)",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +12,11 @@
   },
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "author": "",
   "license": "ISC",
