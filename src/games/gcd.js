@@ -12,7 +12,7 @@ const getCommonDivisor = (firstRandomInt, secondRandomInt) => {
 const startGcd = () => {
   const instruction = 'Find the greatest common divisor of given numbers.';
 
-  const gameData = () => {
+  const gameDataGcd = () => {
     const questions = [];
     const correctAnswers = [];
     const numOfQuestions = 3;
@@ -28,7 +28,7 @@ const startGcd = () => {
     return [questions, correctAnswers];
   };
 
-  return engine(instruction, gameData());
+  return engine(instruction, gameDataGcd());
 };
 
 export default startGcd;

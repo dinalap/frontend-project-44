@@ -18,7 +18,7 @@ const getRandomRow = () => {
 const startProgression = () => {
   const instruction = 'What number is missing in the progression?';
 
-  const gameData = () => {
+  const gameDataProgr = () => {
     const numOfQuestions = 3;
     const questions = [];
     const correctAnswers = [];
@@ -31,6 +31,6 @@ const startProgression = () => {
     return [questions, correctAnswers];
   };
 
-  return engine(instruction, gameData());
+  return engine(instruction, gameDataProgr());
 };
 export default startProgression;

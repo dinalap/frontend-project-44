@@ -5,7 +5,7 @@ const isEven = (num) => num % 2 === 0;
 const startEven = () => {
   const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const gameData = () => {
+  const gameDataEven = () => {
     const numOfQuestions = 3;
     const questions = [];
     const correctAnswers = [];
@@ -17,7 +17,7 @@ const startEven = () => {
     }
     return [questions, correctAnswers];
   };
-  return engine(instruction, gameData());
+  return engine(instruction, gameDataEven());
 };
 
 export default startEven;

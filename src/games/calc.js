@@ -22,7 +22,7 @@ const calculate = (randomOperation, firstRandomInt, secondRandomInt) => {
 const startCalc = () => {
   const instruction = 'What is the result of the expression?';
 
-  const gameData = () => {
+  const gameDataCalc = () => {
     const numOfQuestions = 3;
     const questions = [];
     const correctAnswers = [];
@@ -37,7 +37,7 @@ const startCalc = () => {
     }
     return [questions, correctAnswers];
   };
-  return engine(instruction, gameData());
+  return engine(instruction, gameDataCalc());
 };
 
 export default startCalc;
