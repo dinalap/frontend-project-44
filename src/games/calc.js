@@ -15,7 +15,7 @@ const calculate = (randomOperation, firstRandomInt, secondRandomInt) => {
     case '*':
       return firstRandomInt * secondRandomInt;
     default:
-      console.log('Something went wrong');
+      return Error('Something went wrong');
   }
 };
 

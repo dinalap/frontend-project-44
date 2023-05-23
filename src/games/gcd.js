@@ -7,6 +7,7 @@ const getCommonDivisor = (firstRandomInt, secondRandomInt) => {
       return x;
     }
   }
+  return Error('Something went wrong');
 };
 
 const startGcd = () => {

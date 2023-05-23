@@ -8,9 +8,8 @@ const welcome = () => {
 };
 
 const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
 };
 
 const engine = (instruction, [questions, correctAnswers]) => {
