@@ -1,4 +1,5 @@
-import { getRandomInt, engine } from '../index.js';
+import engine from '../index.js';
+import getRandomInt from '../utils.js';
 
 const getCommonDivisor = (firstRandomInt, secondRandomInt) => {
   let x = firstRandomInt < secondRandomInt ? firstRandomInt : secondRandomInt;
@@ -10,7 +11,7 @@ const getCommonDivisor = (firstRandomInt, secondRandomInt) => {
   return Error('Something went wrong');
 };
 
-const startGcd = () => {
+/* const startGcd = () => {
   const instruction = 'Find the greatest common divisor of given numbers.';
 
   const gameDataGcd = () => {
@@ -30,6 +31,20 @@ const startGcd = () => {
   };
 
   return engine(instruction, gameDataGcd());
+}; */
+
+const generateRound = () => {
+  const firstRandomInt = getRandomInt(1, 20);
+  const secondRandomInt = getRandomInt(1, 20);
+  const question = `${firstRandomInt} ${secondRandomInt}`;
+  const answer = String(getCommonDivisor(firstRandomInt, secondRandomInt));
+  return [question, answer];
+};
+
+const startGcd = () => {
+  const instruction = 'Find the greatest common divisor of given numbers.';
+
+  engine(instruction, generateRound);
 };
 
 export default startGcd;

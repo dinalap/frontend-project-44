@@ -1,4 +1,5 @@
-import { getRandomInt, engine } from '../index.js';
+import engine from '../index.js';
+import getRandomInt from '../utils.js';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
@@ -19,7 +20,7 @@ const calculate = (randomOperation, firstRandomInt, secondRandomInt) => {
   }
 };
 
-const startCalc = () => {
+/* const startCalc = () => {
   const instruction = 'What is the result of the expression?';
 
   const gameDataCalc = () => {
@@ -38,6 +39,19 @@ const startCalc = () => {
     return [questions, correctAnswers];
   };
   return engine(instruction, gameDataCalc());
+}; */
+const generateRound = () => {
+  const firstRandomInt = getRandomInt(1, 10);
+  const secondRandomInt = getRandomInt(1, 10);
+  const randomOperation = getRandomOperation();
+  const question = `${firstRandomInt} ${randomOperation} ${secondRandomInt}`;
+  const answer = String(calculate(randomOperation, firstRandomInt, secondRandomInt));
+  return [question, answer];
 };
 
+const startCalc = () => {
+  const instruction = 'What is the result of the expression?';
+
+  engine(instruction, generateRound);
+};
 export default startCalc;

@@ -1,4 +1,5 @@
-import { getRandomInt, engine } from '../index.js';
+import engine from '../index.js';
+import getRandomInt from '../utils.js';
 
 const isPrime = (randomInt) => {
   if (randomInt < 2) {
@@ -12,7 +13,7 @@ const isPrime = (randomInt) => {
   return true;
 };
 
-const startPrime = () => {
+/* const startPrime = () => {
   const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const gameDataPrime = () => {
@@ -28,6 +29,18 @@ const startPrime = () => {
     return [questions, correctAnswers];
   };
   return engine(instruction, gameDataPrime());
+}; */
+
+const generateRound = () => {
+  const question = getRandomInt(1, 50);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
+};
+
+const startPrime = () => {
+  const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+  engine(instruction, generateRound);
 };
 
 export default startPrime;

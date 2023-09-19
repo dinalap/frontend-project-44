@@ -1,8 +1,9 @@
-import { getRandomInt, engine } from '../index.js';
+import engine from '../index.js';
+import getRandomInt from '../utils.js';
 
 const isEven = (num) => num % 2 === 0;
 
-const startEven = () => {
+/* const startEven = () => {
   const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const gameDataEven = () => {
@@ -18,6 +19,17 @@ const startEven = () => {
     return [questions, correctAnswers];
   };
   return engine(instruction, gameDataEven());
+}; */
+const generateRound = () => {
+  const question = getRandomInt(1, 50);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
+};
+
+const startEven = () => {
+  const instruction = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+  engine(instruction, generateRound);
 };
 
 export default startEven;

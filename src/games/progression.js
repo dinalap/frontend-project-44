@@ -1,4 +1,5 @@
-import { getRandomInt, engine } from '../index.js';
+import engine from '../index.js';
+import getRandomInt from '../utils.js';
 
 const getRandomRow = () => {
   const startInt = getRandomInt(0, 10);
@@ -12,10 +13,10 @@ const getRandomRow = () => {
   const index = getRandomInt(0, 9);
   const hiddenNum = row[index];
   row[index] = '..';
-  return [row.join(' '), hiddenNum];
+  return [row.join(' '), String(hiddenNum)];
 };
 
-const startProgression = () => {
+/* const startProgression = () => {
   const instruction = 'What number is missing in the progression?';
 
   const gameDataProgr = () => {
@@ -32,5 +33,16 @@ const startProgression = () => {
   };
 
   return engine(instruction, gameDataProgr());
+}; */
+
+const generateRound = () => {
+  const [question, answer] = getRandomRow();
+  return [question, answer];
+};
+
+const startProgression = () => {
+  const instruction = 'What number is missing in the progression?';
+
+  engine(instruction, generateRound);
 };
 export default startProgression;
